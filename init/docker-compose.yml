@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    image: scibuff/react-create-app
+    container_name: react-create-app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        HOMEDIR: "/app"
+    volumes:
+      - "./../:/app:rw"
