@@ -9,7 +9,7 @@ cd ./init
 - build the docker image run 
 
 ```bash
-docker-compose -f docker-compose.react.yml build
+docker-compose build
 ```
 - create the react app just build the image and run the container and "auto-remove" it when done.
 

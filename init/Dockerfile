@@ -3,7 +3,7 @@ FROM node:19-alpine
 ARG HOMEDIR="/app"
 
 # create the app folder
-RUN mkdir -p /app
+RUN mkdir -p ${HOMEDIR}
 
 # set the app folder to be the work directory
 WORKDIR ${HOMEDIR}
