@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  app:
+    environment:
+      - DB_HOST=
+    image: scibuff/react-app
+    container_name: react-app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        HOMEDIR: ${HOMEDIR}
+        PORT: ${PORT}
+        NODE_ENV: "development"
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - ./src:${HOMEDIR}/src:rw
+      - ./:${HOMEDIR}/
+      - ${HOMEDIR}/node_modules
