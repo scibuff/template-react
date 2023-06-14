@@ -25,6 +25,11 @@ RUN if [ "$NODE_ENV" = "production" ]; \
 # set the node env variable
 ENV NODE_ENV ${NODE_ENV}
 
+# add bash
+RUN apk add bash
+# add some basic aliases
+RUN echo "alias ll='ls -al'" >> /etc/profile
+
 # copy the rest of the files
 COPY . ./
 
